@@ -22,11 +22,13 @@ Asistente inteligente para consultar leyes colombianas utilizando LangChain y m�
 ### Instalar Dependencias
 
 Con uv:
+
 ```bash
 uv sync
 ```
 
 Con pip:
+
 ```bash
 pip install -e .
 ```
@@ -34,6 +36,7 @@ pip install -e .
 ## Configuración
 
 1. Copia el archivo de ejemplo de variables de entorno:
+
 ```bash
 cp .env.example .env
 ```
@@ -41,6 +44,7 @@ cp .env.example .env
 2. Edita `.env` y configura las credenciales para el proveedor que desees usar:
 
 ### OpenAI
+
 ```env
 LLM_PROVIDER=openai
 OPENAI_API_KEY=tu_api_key_de_openai
@@ -48,13 +52,15 @@ OPENAI_MODEL=gpt-3.5-turbo
 ```
 
 ### OpenRouter
+
 ```env
 LLM_PROVIDER=openrouter
 OPENROUTER_API_KEY=tu_api_key_de_openrouter
-OPENROUTER_MODEL=google/gemini-2.0-flash-exp:free
+OPENROUTER_MODEL=google/gemini-2.5-flash-preview-09-2025
 ```
 
 ### Ollama (Local)
+
 ```env
 LLM_PROVIDER=ollama
 OLLAMA_BASE_URL=http://localhost:11434
@@ -62,6 +68,7 @@ OLLAMA_MODEL=llama3.2
 ```
 
 ### Groq
+
 ```env
 LLM_PROVIDER=groq
 GROQ_API_KEY=tu_api_key_de_groq
@@ -73,6 +80,7 @@ GROQ_MODEL=llama-3.1-8b-instant
 ### Notebook Jupyter
 
 1. Inicia Jupyter:
+
 ```bash
 jupyter notebook
 ```
@@ -115,6 +123,7 @@ llm = get_llm_client("groq", model="mixtral-8x7b-32768")
 El proyecto utiliza una arquitectura modular:
 
 - **`llm_providers.py`**: Módulo con clases para diferentes proveedores LLM
+
   - `BaseLLMProvider`: Clase base abstracta
   - `OpenAIProvider`: Implementación para OpenAI
   - `OpenRouterProvider`: Implementación para OpenRouter
@@ -133,6 +142,7 @@ El proyecto utiliza una arquitectura modular:
 ## Documentos de Ejemplo
 
 Los documentos legales de ejemplo están en la carpeta `data/`:
+
 - Constitución Política de Colombia (1991)
 - Reglamento académico de pregrado
 

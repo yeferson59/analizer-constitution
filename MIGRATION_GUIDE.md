@@ -7,6 +7,7 @@ This project has been refactored to support multiple LLM providers through a cle
 ## What Changed?
 
 ### Before
+
 ```python
 # Old way - hardcoded provider
 from langchain_groq import ChatGroq
@@ -17,6 +18,7 @@ llm = ChatGroq(
 ```
 
 ### After
+
 ```python
 # New way - flexible provider selection
 from llm_providers import get_llm_client
@@ -64,6 +66,7 @@ response = llm.invoke("Your question here")
 ## Supported Providers
 
 ### OpenAI
+
 ```env
 LLM_PROVIDER=openai
 OPENAI_API_KEY=sk-...
@@ -71,23 +74,27 @@ OPENAI_MODEL=gpt-3.5-turbo  # optional
 ```
 
 **Use Cases:**
+
 - Production applications
 - High-quality responses
 - Latest GPT models
 
 ### OpenRouter
+
 ```env
 LLM_PROVIDER=openrouter
 OPENROUTER_API_KEY=sk-or-...
-OPENROUTER_MODEL=google/gemini-2.0-flash-exp:free  # optional
+OPENROUTER_MODEL=google/gemini-2.5-flash-preview-09-2025  # optional
 ```
 
 **Use Cases:**
+
 - Access to multiple model providers (Anthropic, Google, Meta, etc.)
 - Cost optimization
 - Model comparison
 
 ### Ollama (Local)
+
 ```env
 LLM_PROVIDER=ollama
 OLLAMA_BASE_URL=http://localhost:11434
@@ -95,12 +102,14 @@ OLLAMA_MODEL=llama3.2  # optional
 ```
 
 **Use Cases:**
+
 - Privacy-sensitive applications
 - Offline development
 - No API costs
 - Full control over models
 
 ### Groq
+
 ```env
 LLM_PROVIDER=groq
 GROQ_API_KEY=gsk_...
@@ -108,6 +117,7 @@ GROQ_MODEL=llama-3.1-8b-instant  # optional
 ```
 
 **Use Cases:**
+
 - Fast inference
 - Cost-effective
 - Open-source models
@@ -159,6 +169,7 @@ llm = provider.get_client()
 ### Task: Switch from Groq to OpenAI
 
 1. Update `.env`:
+
    ```bash
    LLM_PROVIDER=openai
    OPENAI_API_KEY=sk-...
@@ -202,6 +213,7 @@ else:
 ### Error: "Provider API key is required"
 
 **Solution:** Set the appropriate API key in your `.env` file:
+
 ```bash
 # For Groq
 GROQ_API_KEY=your_key_here
@@ -215,6 +227,7 @@ OPENAI_API_KEY=your_key_here
 ### Error: "Unsupported provider"
 
 **Solution:** Check available providers:
+
 ```python
 from llm_providers import LLMProviderFactory
 print(LLMProviderFactory.get_available_providers())
@@ -223,6 +236,7 @@ print(LLMProviderFactory.get_available_providers())
 ### Error: "ModuleNotFoundError: No module named 'langchain_groq'"
 
 **Solution:** Install missing dependencies:
+
 ```bash
 pip install langchain-groq langchain-ollama
 # or
@@ -232,6 +246,7 @@ uv sync
 ### Ollama Connection Error
 
 **Solution:** Ensure Ollama is running:
+
 ```bash
 ollama serve
 ```
@@ -256,6 +271,7 @@ The changes are **100% backward compatible**. Your existing notebook cells will 
 ## Need Help?
 
 Check these resources:
+
 - `README.md` - General documentation
 - `example_usage.py` - Working examples
 - `CHANGELOG.md` - Detailed change list
