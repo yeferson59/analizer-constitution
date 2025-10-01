@@ -57,9 +57,9 @@ Ver `.env.example` para configurar las variables de entorno necesarias:
 
 ## 📅 Cronología del Proyecto
 
-**Fecha objetivo:** Jueves 2 de octubre de 2024 (presentación de 5 minutos)  
-**Fecha de inicio:** 27 de septiembre de 2024  
-**Fecha de finalización:** 30 de septiembre de 2024
+**Fecha objetivo:** Jueves 2 de octubre de 2025 (presentación de 5 minutos)  
+**Fecha de inicio:** 27 de septiembre de 2025  
+**Fecha de finalización:** 30 de septiembre de 2025
 
 ## 📝 Objetivo del Proyecto
 
