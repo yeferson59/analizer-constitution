@@ -76,12 +76,12 @@ class OpenAIProvider(BaseLLMProvider):
 class OpenRouterProvider(BaseLLMProvider):
     """OpenRouter LLM Provider (uses OpenAI-compatible API)."""
     
-    def __init__(self, model: str = "google/gemini-2.0-flash-exp:free", api_key: Optional[str] = None, **kwargs):
+    def __init__(self, model: str = "google/gemini-2.5-flash-preview-09-2025", api_key: Optional[str] = None, **kwargs):
         """
         Initialize OpenRouter provider.
         
         Args:
-            model: OpenRouter model name (default: google/gemini-2.0-flash-exp:free)
+            model: OpenRouter model name (default: google/gemini-2.5-flash-preview-09-2025)
             api_key: OpenRouter API key (default: from OPENROUTER_API_KEY env var)
             **kwargs: Additional arguments for ChatOpenAI
         """

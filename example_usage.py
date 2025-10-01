@@ -49,7 +49,7 @@ def example_explicit_provider():
     # Example with each provider (commented out to avoid API calls)
     examples = [
         ("openai", "gpt-3.5-turbo"),
-        ("openrouter", "google/gemini-2.0-flash-exp:free"),
+        ("openrouter", "google/gemini-2.5-flash-preview-09-2025"),
         ("ollama", "llama3.2"),
         ("groq", "llama-3.1-8b-instant"),
     ]
