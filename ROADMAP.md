@@ -1,5 +1,32 @@
 # Roadmap detallado — Asistente legal / normativo (LangChain + LLMs)
 
+## Estado Actual del Proyecto (Actualizado)
+
+El proyecto ha sido mejorado con soporte para múltiples proveedores de LLM:
+
+### Arquitectura Multi-Proveedor
+- **Módulo `llm_providers.py`**: Implementación de clases para soporte de múltiples proveedores
+  - `OpenAIProvider`: Soporte para modelos de OpenAI (GPT-3.5, GPT-4, etc.)
+  - `OpenRouterProvider`: Soporte para OpenRouter (compatible con API de OpenAI)
+  - `OllamaProvider`: Soporte para modelos locales con Ollama
+  - `GroqProvider`: Soporte para modelos de Groq (Llama, Mixtral, etc.)
+  - `LLMProviderFactory`: Factory pattern para crear proveedores fácilmente
+  - Función `get_llm_client()`: Interfaz unificada para obtener cliente LLM
+
+### Mejoras Realizadas
+- ✅ Limpieza de código: eliminación de código comentado y duplicado
+- ✅ Arquitectura basada en clases para extensibilidad
+- ✅ Configuración mediante variables de entorno
+- ✅ Documentación actualizada
+- ✅ Soporte para múltiples proveedores sin cambiar el código del notebook
+
+### Configuración
+Ver `.env.example` para configurar las variables de entorno necesarias:
+- `LLM_PROVIDER`: Selecciona el proveedor (openai, openrouter, ollama, groq)
+- Variables específicas por proveedor para API keys y modelos
+
+---
+
 Fecha del objetivo: Jueves 2 de octubre (presentación de 5 minutos)
 
 Resumen rápido
@@ -143,11 +170,13 @@ Materiales a entregar (en el repo)
 - `ROADMAP.md` (este archivo) y `README.md` con instrucciones de ejecución rápida.
 
 Checklist pre-entrega (quick)
-- [ ] Notebook ejecuta de arriba a abajo sin errores (salvo la falta de key que se documenta).
-- [ ] Todos los puntos (a–g) están implementados y señalados en el notebook.
-- [ ] Widgets funcionales para la demo.
+- [x] Notebook ejecuta de arriba a abajo sin errores (salvo la falta de key que se documenta).
+- [x] Todos los puntos (a–g) están implementados y señalados en el notebook.
+- [x] Widgets funcionales para la demo.
 - [ ] Ensayo de 5 minutos realizado al menos 2 veces.
-- [ ] Documentos ejemplo en `data/` y variables de entorno explicadas en `README.md`.
+- [x] Documentos ejemplo en `data/` y variables de entorno explicadas en `README.md`.
+- [x] Soporte multi-proveedor (OpenAI, OpenRouter, Ollama, Groq) implementado.
+- [x] Código limpio y sin duplicados/comentarios innecesarios.
 
 Siguientes pasos inmediatos (qué hacer ahora)
 1. Repartir roles y crear el notebook `main.ipynb`/branch de trabajo.
