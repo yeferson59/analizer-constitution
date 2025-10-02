@@ -100,6 +100,8 @@ class OpenRouterProvider(BaseLLMProvider):
             self._client = ChatOpenAI(
                 model=self.model,
                 api_key=self.api_key,
+                temperature=0.1,
+                top_p=0.20,
                 **self.kwargs
             )
         return self._client
